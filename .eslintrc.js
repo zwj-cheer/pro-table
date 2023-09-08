@@ -29,6 +29,15 @@ module.exports = defineConfig({
   "plugins": [
     "sort-keys-fix"
   ],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', './src/'],
+        ],
+      }
+    }
+  },
   // https://cn.eslint.org/docs/rules/
   rules: {
     // 禁止使用 var
