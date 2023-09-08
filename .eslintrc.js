@@ -26,6 +26,9 @@ module.exports = defineConfig({
     "plugin:@typescript-eslint/recommended", // typescript-eslint推荐规则,
     "./.eslintrc-auto-import.json",
   ],
+  "plugins": [
+    "sort-keys-fix"
+  ],
   // https://cn.eslint.org/docs/rules/
   rules: {
     // 禁止使用 var
@@ -63,22 +66,8 @@ module.exports = defineConfig({
       "error",
       { vars: "all", args: "after-used", ignoreRestSiblings: false },
     ],
-    "vue/html-indent": "off",
-    // 关闭此规则 使用 prettier 的格式化规则，
-    "vue/max-attributes-per-line": ["off"],
     // vue3.2.25之后为props使用解耦赋值语法，删除警告
     "vue/no-setup-props-destructure": "off",
-    // 优先使用驼峰，element 组件除外
-    "vue/component-name-in-template-casing": [
-      "error",
-      "PascalCase",
-      {
-        ignores: ["/^el-/", "/^router-/"],
-        registeredComponentsOnly: false,
-      },
-    ],
-    // 强制使用驼峰
-    camelcase: ["error", { properties: "always" }],
     // 优先使用 const
     "prefer-const": [
       "error",
@@ -86,6 +75,15 @@ module.exports = defineConfig({
         destructuring: "any",
         ignoreReadBeforeAssign: false,
       },
-    ],
+    ]
   },
+
+  "overrides": [
+    {
+      "files": ["*.json",],
+      "rules": {
+        "sort-keys-fix/sort-keys-fix": "warn"
+      }
+    }
+  ]
 })

@@ -1,17 +1,4 @@
 {
-  "name": "pro-table",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview",
-    "test:unit": "vitest",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx --ignore-path .gitignore",
-    "lint:fix": "eslint . --ext .vue,.js,.jsx,.ts,.tsx --ignore-path .gitignore --fix"
-  },
   "dependencies": {
     "eslint-config-wesbos": "^3.2.3",
     "pinia": "^2.1.6",
@@ -29,13 +16,37 @@
     "@vue/tsconfig": "^0.4.0",
     "eslint": "^8.46.0",
     "eslint-define-config": "^1.23.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-vue": "^9.16.1",
     "jsdom": "^22.1.0",
     "lefthook": "^1.4.10",
     "npm-run-all": "^4.1.5",
+    "sass": "^1.66.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-recommended-scss": "^13.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
     "typescript": "~5.1.6",
     "vite": "^4.4.9",
     "vitest": "^0.34.2",
     "vue-tsc": "^1.8.8"
-  }
+  },
+  "name": "pro-table",
+  "private": true,
+  "scripts": {
+    "build": "run-p type-check build-only",
+    "build-only": "vite build",
+    "dev": "vite",
+    "eslint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx,.json",
+    "eslint:fix": "eslint . --fix --ext .vue,.js,.jsx,.ts,.tsx,.json",
+    "lint": "npm run eslint && npm run stylelint",
+    "lint:fix": "npm run eslint:fix && npm run stylelint:fix",
+    "preview": "vite preview",
+    "stylelint": "stylelint \"src/**/*.{css,scss,vue,tsx}\"",
+    "stylelint:fix": "stylelint \"src/**/*.{css,scss,vue,tsx}\" --fix",
+    "test:unit": "vitest",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
+  },
+  "version": "0.0.0"
 }

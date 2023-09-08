@@ -1,0 +1,10 @@
+node_modules
+.vscode
+.idea
+dist
+public
+*.css
+*.scss
+*.sass
+pnpm-lock.yaml
+lefthook.yml
