@@ -19,7 +19,9 @@ module.exports = defineConfig({
     "vue/setup-compiler-macros": true,
   },
   // https://eslint.bootcss.com/docs/user-guide/configuring#specifying-globals
-  globals: {},
+  globals: {
+    ref: true
+  },
   extends: [
     "plugin:vue/vue3-recommended",
     "eslint:recommended",

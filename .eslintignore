@@ -6,3 +6,5 @@ public
 *.css
 *.scss
 *.sass
+lefthook.yml
+pnpm-lock.yaml

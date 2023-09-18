@@ -7,8 +7,21 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElEmpty: typeof import('element-plus/es')['ElEmpty']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
+    Empty: typeof import('./components/Empty.vue')['default']
+    Pagination: typeof import('./components/ProPagination.vue')['default']
+    ProPagination: typeof import('./components/ProPagination.vue')['default']
+    ProTable: typeof import('./components/ProTable.vue')['default']
+    ProTableEmpty: typeof import('./components/ProTableEmpty.vue')['default']
+    ProTableHeader: typeof import('./components/ProTableHeader.vue')['default']
+    ProTableRow: typeof import('./components/ProTableRow.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TableRendering: typeof import('./components/TableRendering.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

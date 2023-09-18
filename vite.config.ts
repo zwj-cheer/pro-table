@@ -5,22 +5,25 @@ import vue from "@vitejs/plugin-vue"
 
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ['vue', 'vue-router']
+      imports: ['vue', 'vue-router'],
+      resolvers: [ElementPlusResolver()],
     }),
     Components({
       // 指定组件位置，默认是src/components
       dirs: ['src/components'],
       // ui库解析器
-      // resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()],
       extensions: ['vue'],
       // 配置文件生成位置
-      dts: 'src/components.d.ts'
+      dts: 'src/components.d.ts',
+
     })
   ],
   resolve: {
