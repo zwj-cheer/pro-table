@@ -4,7 +4,6 @@
   },
   "github": {
     "release": true,
-    "tokenRef": "GITHUB_TOKEN",
     "autoGenerate": true
   }
 }
