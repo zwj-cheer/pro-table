@@ -50,7 +50,7 @@
     "lint": "npm run eslint && npm run stylelint",
     "lint:fix": "npm run eslint:fix && npm run stylelint:fix",
     "preview": "vite preview",
-    "release": "release-it",
+    "release": "release-it --ci",
     "stylelint": "stylelint \"src/**/*.{css,scss,vue,tsx}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,scss,vue,tsx}\" --fix",
     "test:unit": "vitest",
