@@ -11,11 +11,12 @@ const props = defineProps<{
 <template>
   <tr>
     <td
-      v-for="c in props.columns"
-      :key="c.key"
+      v-for="item in props.columns"
+      :key="item.key"
+      :style="{width: item.width}"
     >
-      <slot :column="c">
-        {{ props.record[c.key] }}
+      <slot :column="item">
+        {{ props.record[item.key] }}
       </slot>
     </td>
   </tr>

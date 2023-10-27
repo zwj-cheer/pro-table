@@ -92,7 +92,7 @@ function genDisplayData (): void {
           @sort-change="sortChange"
         >
           <template #table-header="{ column }">
-            <slot :name="`header-${column.key}`">
+            <slot :name="`_header-${column.key}`">
               {{ column.title }}
             </slot>
           </template>

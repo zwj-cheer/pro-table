@@ -34,7 +34,7 @@ const handleTh = (column: Column): void => {
   if (column.sortable === "asc") {
     column.sortable = "desc"
   } else if (column.sortable === "desc") {
-    column.sortable = false
+    column.sortable = true
   } else {
     column.sortable = "asc"
   }
@@ -44,7 +44,7 @@ const handleTh = (column: Column): void => {
 
 const handleSort = (sortable: Order, column: Column): void => {
   if (sortable === column.sortable) {
-    column.sortable = false
+    column.sortable = true
   } else {
     column.sortable = sortable
   }
@@ -59,6 +59,7 @@ const handleSort = (sortable: Order, column: Column): void => {
       v-for="item in _columns"
       :key="item.key"
       :class="item.sortable ? item.sortable : ''"
+      :style="{width: item.width}"
       @click="handleTh(item)"
     >
       <div class="header-row-display">

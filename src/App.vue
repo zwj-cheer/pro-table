@@ -6,6 +6,7 @@ const columns: Columns = [
     title: '名称',
     key: 'name',
     sortable: true,
+
   },
   { key: 'sex',
     title: '性别',
@@ -22,7 +23,8 @@ const columns: Columns = [
   },
   {
     key: 'active',
-    title: '操作'
+    title: '操作',
+    width: '100px'
   }
 ]
 
